@@ -11,6 +11,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -23,7 +24,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -47,8 +47,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,16 +71,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\StuInfoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\StuInfoControl.Designer.cs">
+      <DependentUpon>StuInfoControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\MySchool.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MySchool.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utils\DBHelper.cs" />
+    <Compile Include="Util\RegularExpressions.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\ModifyWindowViewModel.cs" />
+    <Compile Include="ViewModels\NewCourseInfoViewModel.cs" />
+    <Compile Include="ViewModels\NewStuInfoViewModel.cs" />
+    <Compile Include="ViewModels\StuInfoManagerViewModel.cs" />
+    <Compile Include="ViewModels\StuScoreManagerViewModel.cs" />
     <Compile Include="Views\About.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +116,12 @@
     <Compile Include="Views\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ModifyWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ModifyWindow.Designer.cs">
+      <DependentUpon>ModifyWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\NewCourseInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +134,21 @@
     <Compile Include="Views\NewStuInfo.Designer.cs">
       <DependentUpon>NewStuInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\StuInfoManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\StuInfoManager.Designer.cs">
+      <DependentUpon>StuInfoManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StuScoreManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\StuScoreManager.Designer.cs">
+      <DependentUpon>StuScoreManager.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Controls\StuInfoControl.resx">
+      <DependentUpon>StuInfoControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,12 +171,30 @@
     <EmbeddedResource Include="Views\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ModifyWindow.resx">
+      <DependentUpon>ModifyWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\NewCourseInfo.resx">
       <DependentUpon>NewCourseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\NewStuInfo.resx">
       <DependentUpon>NewStuInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\StuInfoManager.resx">
+      <DependentUpon>StuInfoManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\StuScoreManager.resx">
+      <DependentUpon>StuScoreManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Models\MySchool.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>MySchool.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Models\MySchool.dbml.layout">
+      <DependentUpon>MySchool.dbml</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -142,7 +209,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ViewModels\" />
+    <Content Include="MySchool.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MySchool_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>MySchool.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\round_clock_502px_1159612_easyicon.net.png" />
@@ -161,6 +234,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search_783px_1207893_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

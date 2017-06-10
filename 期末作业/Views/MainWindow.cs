@@ -32,15 +32,37 @@ namespace 期末作业.Views
         private void tsbNewStudent_Click(object sender, EventArgs e)
         {
             NewStuInfo newStuIfon = new NewStuInfo();
-            newStuIfon.StartPosition = FormStartPosition.CenterScreen;
-            newStuIfon.ShowDialog();
+            //newStuIfon.StartPosition = FormStartPosition.CenterScreen;
+            //newStuIfon.ShowDialog();
+            MDIWindow(newStuIfon);
         }
 
         private void tsbNewCourse_Click(object sender, EventArgs e)
         {
             NewCourseInfo newCourseInfo = new NewCourseInfo();
-            newCourseInfo.StartPosition = FormStartPosition.CenterScreen;
-            newCourseInfo.ShowDialog();
+            //newCourseInfo.StartPosition = FormStartPosition.CenterScreen;
+            //newCourseInfo.ShowDialog();
+            MDIWindow(newCourseInfo);
+        }
+
+        private void MDIWindow(Form form)
+        {
+            if (this.MdiChildren.Count() > 0)
+                this.MdiChildren[0].Close();
+            form.MdiParent = this;
+            form.WindowState = FormWindowState.Maximized;
+            form.Show();
+        }
+
+        private void tsbStuMsgMag_Click(object sender, EventArgs e)
+        {
+            StuInfoManager stuInfoManager = new StuInfoManager();
+            MDIWindow(stuInfoManager);
+        }
+
+        private void tsbScoreMsg_Click(object sender, EventArgs e)
+        {
+            MDIWindow(new StuScoreManager());
         }
     }
 }

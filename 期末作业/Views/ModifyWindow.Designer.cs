@@ -1,6 +1,6 @@
 ﻿namespace 期末作业.Views
 {
-    partial class NewStuInfo
+    partial class ModifyWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -35,14 +35,14 @@
             // 
             // StuInfoControl
             // 
-            this.StuInfoControl.Location = new System.Drawing.Point(-2, -2);
+            this.StuInfoControl.Location = new System.Drawing.Point(2, 2);
             this.StuInfoControl.Name = "StuInfoControl";
-            this.StuInfoControl.Size = new System.Drawing.Size(699, 318);
+            this.StuInfoControl.Size = new System.Drawing.Size(722, 330);
             this.StuInfoControl.TabIndex = 0;
             // 
             // btnYes
             // 
-            this.btnYes.Location = new System.Drawing.Point(166, 224);
+            this.btnYes.Location = new System.Drawing.Point(165, 228);
             this.btnYes.Name = "btnYes";
             this.btnYes.Size = new System.Drawing.Size(75, 23);
             this.btnYes.TabIndex = 1;
@@ -52,7 +52,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(400, 224);
+            this.btnCancel.Location = new System.Drawing.Point(393, 228);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 1;
@@ -60,14 +60,16 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // NewStuInfo
+            // ModifyWindow
             // 
-            this.ClientSize = new System.Drawing.Size(694, 317);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(723, 334);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnYes);
             this.Controls.Add(this.StuInfoControl);
-            this.Name = "NewStuInfo";
-            this.Load += new System.EventHandler(this.NewStuInfo_Load);
+            this.Name = "ModifyWindow";
+            this.Text = "ModifyWindow";
             this.ResumeLayout(false);
 
         }

@@ -57,6 +57,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.系统管理ToolStripMenuItem,
             this.学生管理MToolStripMenuItem,
@@ -187,6 +188,7 @@
             this.tsbStuMsgMag.Name = "tsbStuMsgMag";
             this.tsbStuMsgMag.Size = new System.Drawing.Size(36, 36);
             this.tsbStuMsgMag.Text = "学生信息管理";
+            this.tsbStuMsgMag.Click += new System.EventHandler(this.tsbStuMsgMag_Click);
             // 
             // tsbNewCourse
             // 
@@ -215,15 +217,17 @@
             this.tsbScoreMsg.Name = "tsbScoreMsg";
             this.tsbScoreMsg.Size = new System.Drawing.Size(36, 36);
             this.tsbScoreMsg.Text = "成绩管理";
+            this.tsbScoreMsg.Click += new System.EventHandler(this.tsbScoreMsg_Click);
             // 
             // statusStrip1
             // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tssStatus,
             this.tssMsg});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 405);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 402);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(827, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(827, 25);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -232,14 +236,14 @@
             this.tssStatus.Image = global::期末作业.Properties.Resources.round_clock_502px_1159612_easyicon_net;
             this.tssStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tssStatus.Name = "tssStatus";
-            this.tssStatus.Size = new System.Drawing.Size(48, 17);
+            this.tssStatus.Size = new System.Drawing.Size(52, 20);
             this.tssStatus.Text = "就绪";
             this.tssStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tssMsg
             // 
             this.tssMsg.Name = "tssMsg";
-            this.tssMsg.Size = new System.Drawing.Size(764, 17);
+            this.tssMsg.Size = new System.Drawing.Size(760, 20);
             this.tssMsg.Spring = true;
             this.tssMsg.Text = "请选择一个操作";
             this.tssMsg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -252,6 +256,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainWindow";
             this.Text = "MainWindow";

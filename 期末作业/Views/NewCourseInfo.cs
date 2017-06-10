@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using 期末作业.Models;
+using 期末作业.ViewModels;
 
 namespace 期末作业.Views
 {
@@ -18,9 +20,11 @@ namespace 期末作业.Views
         private int _Credit;
         private int _PrelectionCredit;
         private int _ExperimentCredit;
+        private NewCourseInfoViewModel _ViewModel;
         public NewCourseInfo()
         {
             InitializeComponent();
+            _ViewModel = new NewCourseInfoViewModel();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -58,13 +62,37 @@ namespace 期末作业.Views
                 }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void btnFont_Click(object sender, EventArgs e)
         {
             FontDialog fontDialog = new FontDialog();
-            if(fontDialog.ShowDialog()==DialogResult.OK)
+            if (fontDialog.ShowDialog() == DialogResult.OK)
             {
                 rtbInfo.Font = fontDialog.Font;
             }
+        }
+
+        private void btnColor_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                rtbInfo.ForeColor = colorDialog.Color;
+            }
+        }
+
+        private void btnYes_Click(object sender, EventArgs e)
+        {
+            CourseMsg course = new CourseMsg()
+            {
+                CourseName = _CourseName,
+                CourseClass = _CourseClass,
+                Credit = _Credit,
+                ExperimentCredit = _ExperimentCredit,
+                PrelectionCredit = _PrelectionCredit,
+                Required = _Required=="必修"
+            };
+            _ViewModel.AddCourse(course);
         }
     }
 }
