@@ -64,5 +64,10 @@ namespace 期末作业.Views
         {
             MDIWindow(new StuScoreManager());
         }
+
+        private void tsbCurMsgMag_Click(object sender, EventArgs e)
+        {
+            MDIWindow(new CourseInfo());
+        }
     }
 }

@@ -92,6 +92,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\RegularExpressions.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\CourseInfoViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ModifyWindowViewModel.cs" />
     <Compile Include="ViewModels\NewCourseInfoViewModel.cs" />
@@ -103,6 +104,12 @@
     </Compile>
     <Compile Include="Views\About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CourseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CourseInfo.Designer.cs">
+      <DependentUpon>CourseInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Login.cs">
       <SubType>Form</SubType>
@@ -164,6 +171,9 @@
     </Compile>
     <EmbeddedResource Include="Views\About.resx">
       <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CourseInfo.resx">
+      <DependentUpon>CourseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

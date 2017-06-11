@@ -208,6 +208,7 @@
             this.tsbCurMsgMag.Name = "tsbCurMsgMag";
             this.tsbCurMsgMag.Size = new System.Drawing.Size(36, 36);
             this.tsbCurMsgMag.Text = "课程信息管理";
+            this.tsbCurMsgMag.Click += new System.EventHandler(this.tsbCurMsgMag_Click);
             // 
             // tsbScoreMsg
             // 
