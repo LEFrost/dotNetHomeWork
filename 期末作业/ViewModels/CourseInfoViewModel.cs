@@ -15,8 +15,11 @@ namespace 期末作业.ViewModels
                         select a;
             return query;
         }
-        public void UpdateData(IEnumerable<CourseMsg> list)
+        public void UpdateData(IEnumerable<CourseMsg> addList,IEnumerable<CourseMsg> removeList)
          {
+            _DBMySchool.CourseMsg.InsertAllOnSubmit<CourseMsg>(addList);
+            _DBMySchool.CourseMsg.DeleteAllOnSubmit<CourseMsg>(removeList);
+
             _DBMySchool.SubmitChanges();
         }
         public void Refresh()

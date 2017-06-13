@@ -17,9 +17,7 @@ namespace 期末作业.Views
     public partial class StuScoreManager : Form
     {
         private int _Current;
-        //private List<CourseMsg> _CourseList;
         private List<ScoreMsg> _ScoreList;
-        //private List<StudentMsg> _StudentList;
         private StuScoreManagerViewModel _ViewModel;
         public StuScoreManager()
         {

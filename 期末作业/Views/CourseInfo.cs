@@ -17,15 +17,19 @@ namespace 期末作业.Views
     public partial class CourseInfo : Form
     {
         private CourseInfoViewModel _ViewModel;
-        private List<CourseMsg> _CourseList;
+        private BindingList<CourseMsg> _CourseList;
+        private List<CourseMsg> _AddList;
+        private List<CourseMsg> _RemoveList;
         public CourseInfo()
         {
             InitializeComponent();
+            _AddList = new List<CourseMsg>();
+            _RemoveList = new List<CourseMsg>();
             _ViewModel = new CourseInfoViewModel();
         }
         private void ShowData()
         {
-            _CourseList = _ViewModel.GetCourses().ToList();
+            _CourseList = new BindingList<CourseMsg>(_ViewModel.GetCourses().ToList());
             dgvCourse.DataSource = _CourseList;
         }
 
@@ -40,27 +44,47 @@ namespace 期末作业.Views
             dgvCourse.Update();
             foreach (var item in _CourseList)
                 Debug.WriteLine(item.CourseId);
-            _ViewModel.UpdateData(_CourseList);
+            _ViewModel.UpdateData(_AddList, _RemoveList);
         }
 
-        private void dgvCourse_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex == _CourseList.Count - 1)
-            {
-                _CourseList.Add(new CourseMsg() {CourseName="sds",Credit=32});
-                dgvCourse.Refresh();
-            }
-        }
+
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("是否取消操作","注意",MessageBoxButtons.OKCancel,MessageBoxIcon.Question)==DialogResult.OK)
+            if (MessageBox.Show("是否取消操作", "注意", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 _CourseList.Clear();
                 _ViewModel.Refresh();
                 ShowData();
                 dgvCourse.Refresh();
             }
+        }
+
+        private void dgvCourse_KeyPress(object sender, KeyPressEventArgs e)
+        {
+        }
+
+        private void dgvCourse_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+
+                if (dgvCourse.SelectedRows.Count > 0)
+                {
+                    int index = dgvCourse.SelectedRows[0].Index;
+                    _RemoveList.Add(_CourseList[index]);
+                    _CourseList.RemoveAt(index);
+                }
+                else
+                {
+                    MessageBox.Show("请选择要删除的行", "消息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+        }
+
+        private void dgvCourse_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            Debug.WriteLine("test");
         }
     }
 }

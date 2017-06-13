@@ -35,7 +35,7 @@
             this.CourseId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CourseClass = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Required = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Required = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Credit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrelectionCredit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExperimentCredit = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,9 +44,10 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(120, 230);
+            this.btnUpdate.Location = new System.Drawing.Point(160, 288);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(86, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(115, 29);
             this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "保存更新(&S)";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -54,9 +55,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(368, 230);
+            this.btnCancel.Location = new System.Drawing.Point(491, 288);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(88, 23);
+            this.btnCancel.Size = new System.Drawing.Size(117, 29);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "取消更新(&C)";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -65,9 +67,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 209);
+            this.label1.Location = new System.Drawing.Point(47, 261);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(383, 12);
+            this.label1.Size = new System.Drawing.Size(482, 15);
             this.label1.TabIndex = 2;
             this.label1.Text = "提示，选中行在按<DEL>键可删除该行数据。双击末行，可添加新纪录。";
             // 
@@ -82,12 +85,15 @@
             this.Credit,
             this.PrelectionCredit,
             this.ExperimentCredit});
-            this.dgvCourse.Location = new System.Drawing.Point(12, 12);
+            this.dgvCourse.Location = new System.Drawing.Point(16, 15);
+            this.dgvCourse.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCourse.Name = "dgvCourse";
             this.dgvCourse.RowTemplate.Height = 23;
-            this.dgvCourse.Size = new System.Drawing.Size(589, 185);
+            this.dgvCourse.Size = new System.Drawing.Size(785, 231);
             this.dgvCourse.TabIndex = 3;
-            this.dgvCourse.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCourse_CellContentDoubleClick);
+            this.dgvCourse.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvCourse_RowsAdded);
+            this.dgvCourse.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvCourse_KeyDown);
+            this.dgvCourse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvCourse_KeyPress);
             // 
             // CourseId
             // 
@@ -116,6 +122,8 @@
             this.Required.DataPropertyName = "Required";
             this.Required.HeaderText = "必修";
             this.Required.Name = "Required";
+            this.Required.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Required.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Credit
             // 
@@ -140,13 +148,14 @@
             // 
             // CourseInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 265);
+            this.ClientSize = new System.Drawing.Size(817, 331);
             this.Controls.Add(this.dgvCourse);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnUpdate);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CourseInfo";
             this.Text = "CourseInfo";
             this.Load += new System.EventHandler(this.CourseInfo_Load);
@@ -164,7 +173,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CourseId;
         private System.Windows.Forms.DataGridViewTextBoxColumn CourseName;
         private System.Windows.Forms.DataGridViewTextBoxColumn CourseClass;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Required;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Required;
         private System.Windows.Forms.DataGridViewTextBoxColumn Credit;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrelectionCredit;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExperimentCredit;
