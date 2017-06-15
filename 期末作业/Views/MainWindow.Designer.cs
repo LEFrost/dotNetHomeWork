@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.系统管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,14 +41,14 @@
             this.帮助HToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tssMsg = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tssStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsbNewStudent = new System.Windows.Forms.ToolStripButton();
             this.tsbStuMsgMag = new System.Windows.Forms.ToolStripButton();
             this.tsbNewCourse = new System.Windows.Forms.ToolStripButton();
             this.tsbCurMsgMag = new System.Windows.Forms.ToolStripButton();
             this.tsbScoreMsg = new System.Windows.Forms.ToolStripButton();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.tssStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tssMsg = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -102,6 +101,7 @@
             | System.Windows.Forms.Keys.S)));
             this.添加学生信息AToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.添加学生信息AToolStripMenuItem.Text = "添加学生信息(&A)";
+            this.添加学生信息AToolStripMenuItem.Click += new System.EventHandler(this.tsbNewStudent_Click);
             // 
             // 学生信息管理ToolStripMenuItem
             // 
@@ -109,6 +109,7 @@
             this.学生信息管理ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.学生信息管理ToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.学生信息管理ToolStripMenuItem.Text = "学生信息管理(&I)";
+            this.学生信息管理ToolStripMenuItem.Click += new System.EventHandler(this.tsbStuMsgMag_Click);
             // 
             // 课程管理CToolStripMenuItem
             // 
@@ -126,6 +127,7 @@
             | System.Windows.Forms.Keys.C)));
             this.添加课程AToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
             this.添加课程AToolStripMenuItem.Text = "添加课程(&A)";
+            this.添加课程AToolStripMenuItem.Click += new System.EventHandler(this.tsbNewCourse_Click);
             // 
             // 课程信息管理TToolStripMenuItem
             // 
@@ -133,12 +135,14 @@
             this.课程信息管理TToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
             this.课程信息管理TToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
             this.课程信息管理TToolStripMenuItem.Text = "课程信息管理(&T)";
+            this.课程信息管理TToolStripMenuItem.Click += new System.EventHandler(this.tsbCurMsgMag_Click);
             // 
             // 成绩管理AToolStripMenuItem
             // 
             this.成绩管理AToolStripMenuItem.Name = "成绩管理AToolStripMenuItem";
             this.成绩管理AToolStripMenuItem.Size = new System.Drawing.Size(84, 21);
             this.成绩管理AToolStripMenuItem.Text = "成绩管理(&A)";
+            this.成绩管理AToolStripMenuItem.Click += new System.EventHandler(this.tsbScoreMsg_Click);
             // 
             // 帮助HToolStripMenuItem
             // 
@@ -170,56 +174,6 @@
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "常用命令";
             // 
-            // tsbNewStudent
-            // 
-            this.tsbNewStudent.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbNewStudent.Image = ((System.Drawing.Image)(resources.GetObject("tsbNewStudent.Image")));
-            this.tsbNewStudent.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbNewStudent.Name = "tsbNewStudent";
-            this.tsbNewStudent.Size = new System.Drawing.Size(36, 36);
-            this.tsbNewStudent.Text = "添加学生信息";
-            this.tsbNewStudent.Click += new System.EventHandler(this.tsbNewStudent_Click);
-            // 
-            // tsbStuMsgMag
-            // 
-            this.tsbStuMsgMag.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbStuMsgMag.Image = ((System.Drawing.Image)(resources.GetObject("tsbStuMsgMag.Image")));
-            this.tsbStuMsgMag.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbStuMsgMag.Name = "tsbStuMsgMag";
-            this.tsbStuMsgMag.Size = new System.Drawing.Size(36, 36);
-            this.tsbStuMsgMag.Text = "学生信息管理";
-            this.tsbStuMsgMag.Click += new System.EventHandler(this.tsbStuMsgMag_Click);
-            // 
-            // tsbNewCourse
-            // 
-            this.tsbNewCourse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbNewCourse.Image = ((System.Drawing.Image)(resources.GetObject("tsbNewCourse.Image")));
-            this.tsbNewCourse.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbNewCourse.Name = "tsbNewCourse";
-            this.tsbNewCourse.Size = new System.Drawing.Size(36, 36);
-            this.tsbNewCourse.Text = "添加课程信息";
-            this.tsbNewCourse.Click += new System.EventHandler(this.tsbNewCourse_Click);
-            // 
-            // tsbCurMsgMag
-            // 
-            this.tsbCurMsgMag.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbCurMsgMag.Image = ((System.Drawing.Image)(resources.GetObject("tsbCurMsgMag.Image")));
-            this.tsbCurMsgMag.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbCurMsgMag.Name = "tsbCurMsgMag";
-            this.tsbCurMsgMag.Size = new System.Drawing.Size(36, 36);
-            this.tsbCurMsgMag.Text = "课程信息管理";
-            this.tsbCurMsgMag.Click += new System.EventHandler(this.tsbCurMsgMag_Click);
-            // 
-            // tsbScoreMsg
-            // 
-            this.tsbScoreMsg.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbScoreMsg.Image = ((System.Drawing.Image)(resources.GetObject("tsbScoreMsg.Image")));
-            this.tsbScoreMsg.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbScoreMsg.Name = "tsbScoreMsg";
-            this.tsbScoreMsg.Size = new System.Drawing.Size(36, 36);
-            this.tsbScoreMsg.Text = "成绩管理";
-            this.tsbScoreMsg.Click += new System.EventHandler(this.tsbScoreMsg_Click);
-            // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -232,6 +186,14 @@
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // tssMsg
+            // 
+            this.tssMsg.Name = "tssMsg";
+            this.tssMsg.Size = new System.Drawing.Size(760, 20);
+            this.tssMsg.Spring = true;
+            this.tssMsg.Text = "请选择一个操作";
+            this.tssMsg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // tssStatus
             // 
             this.tssStatus.Image = global::期末作业.Properties.Resources.round_clock_502px_1159612_easyicon_net;
@@ -241,13 +203,55 @@
             this.tssStatus.Text = "就绪";
             this.tssStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tssMsg
+            // tsbNewStudent
             // 
-            this.tssMsg.Name = "tssMsg";
-            this.tssMsg.Size = new System.Drawing.Size(760, 20);
-            this.tssMsg.Spring = true;
-            this.tssMsg.Text = "请选择一个操作";
-            this.tssMsg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsbNewStudent.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbNewStudent.Image = global::期末作业.Properties.Resources.student_224px_1150106_easyicon_net;
+            this.tsbNewStudent.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbNewStudent.Name = "tsbNewStudent";
+            this.tsbNewStudent.Size = new System.Drawing.Size(36, 36);
+            this.tsbNewStudent.Text = "添加学生信息";
+            this.tsbNewStudent.Click += new System.EventHandler(this.tsbNewStudent_Click);
+            // 
+            // tsbStuMsgMag
+            // 
+            this.tsbStuMsgMag.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbStuMsgMag.Image = global::期末作业.Properties.Resources.message_650px_1192837_easyicon_net;
+            this.tsbStuMsgMag.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbStuMsgMag.Name = "tsbStuMsgMag";
+            this.tsbStuMsgMag.Size = new System.Drawing.Size(36, 36);
+            this.tsbStuMsgMag.Text = "学生信息管理";
+            this.tsbStuMsgMag.Click += new System.EventHandler(this.tsbStuMsgMag_Click);
+            // 
+            // tsbNewCourse
+            // 
+            this.tsbNewCourse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbNewCourse.Image = global::期末作业.Properties.Resources.course_assignments_48px_1138136_easyicon_net;
+            this.tsbNewCourse.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbNewCourse.Name = "tsbNewCourse";
+            this.tsbNewCourse.Size = new System.Drawing.Size(36, 36);
+            this.tsbNewCourse.Text = "添加课程信息";
+            this.tsbNewCourse.Click += new System.EventHandler(this.tsbNewCourse_Click);
+            // 
+            // tsbCurMsgMag
+            // 
+            this.tsbCurMsgMag.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbCurMsgMag.Image = global::期末作业.Properties.Resources.computer_694px_1196180_easyicon_net;
+            this.tsbCurMsgMag.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbCurMsgMag.Name = "tsbCurMsgMag";
+            this.tsbCurMsgMag.Size = new System.Drawing.Size(36, 36);
+            this.tsbCurMsgMag.Text = "课程信息管理";
+            this.tsbCurMsgMag.Click += new System.EventHandler(this.tsbCurMsgMag_Click);
+            // 
+            // tsbScoreMsg
+            // 
+            this.tsbScoreMsg.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbScoreMsg.Image = global::期末作业.Properties.Resources.test_413px_1197298_easyicon_net;
+            this.tsbScoreMsg.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbScoreMsg.Name = "tsbScoreMsg";
+            this.tsbScoreMsg.Size = new System.Drawing.Size(36, 36);
+            this.tsbScoreMsg.Text = "成绩管理";
+            this.tsbScoreMsg.Click += new System.EventHandler(this.tsbScoreMsg_Click);
             // 
             // MainWindow
             // 

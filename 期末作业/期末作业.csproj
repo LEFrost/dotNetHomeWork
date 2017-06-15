@@ -218,6 +218,14 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>MySchool.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\test_413px_1197298_easyicon.net.png" />
+    <None Include="Resources\student_224px_1150106_easyicon.net.png" />
+    <None Include="Resources\search_783px_1207893_easyicon.net1.png" />
+    <None Include="Resources\round_clock_502px_1159612_easyicon.net1.png" />
+    <None Include="Resources\message_650px_1192837_easyicon.net.png" />
+    <None Include="Resources\information_72px_1171221_easyicon.net.png" />
+    <None Include="Resources\course_assignments_48px_1138136_easyicon.net.png" />
+    <None Include="Resources\computer_694px_1196180_easyicon.net.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\round_clock_502px_1159612_easyicon.net.png" />

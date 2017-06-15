@@ -63,6 +63,46 @@ namespace 期末作业.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap computer_694px_1196180_easyicon_net {
+            get {
+                object obj = ResourceManager.GetObject("computer_694px_1196180_easyicon.net", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap course_assignments_48px_1138136_easyicon_net {
+            get {
+                object obj = ResourceManager.GetObject("course_assignments_48px_1138136_easyicon.net", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap information_72px_1171221_easyicon_net {
+            get {
+                object obj = ResourceManager.GetObject("information_72px_1171221_easyicon.net", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap message_650px_1192837_easyicon_net {
+            get {
+                object obj = ResourceManager.GetObject("message_650px_1192837_easyicon.net", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap round_clock_502px_1159612_easyicon_net {
             get {
                 object obj = ResourceManager.GetObject("round_clock_502px_1159612_easyicon.net", resourceCulture);
@@ -73,9 +113,49 @@ namespace 期末作业.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap round_clock_502px_1159612_easyicon1 {
+            get {
+                object obj = ResourceManager.GetObject("round_clock_502px_1159612_easyicon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap search_783px_1207893_easyicon_net {
             get {
                 object obj = ResourceManager.GetObject("search_783px_1207893_easyicon.net", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap search_783px_1207893_easyicon1 {
+            get {
+                object obj = ResourceManager.GetObject("search_783px_1207893_easyicon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap student_224px_1150106_easyicon_net {
+            get {
+                object obj = ResourceManager.GetObject("student_224px_1150106_easyicon.net", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap test_413px_1197298_easyicon_net {
+            get {
+                object obj = ResourceManager.GetObject("test_413px_1197298_easyicon.net", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -54,6 +54,7 @@ namespace 期末作业.Views
                 int index = lvStudents.SelectedItems[0].Index;
                 var student = _ViewModel.GetStudent(Convert.ToInt32(lvStudents.SelectedItems[0].Text));
                 ModifyWindow modify = new ModifyWindow(student);
+                modify.StartPosition = FormStartPosition.CenterParent;
                 if (modify.ShowDialog() == DialogResult.OK)
                 {
                     lvStudents.Items.RemoveAt(index);

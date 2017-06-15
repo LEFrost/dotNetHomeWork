@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace 期末作业.Models
 {
-   [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ScoreMsg")]
+   [System.Data.Linq.Mapping.Table(Name="dbo.ScoreMsg")]
 
-    public partial class ScoreMsg : INotifyPropertyChanging, INotifyPropertyChanged
+    public  class ScoreMsg : INotifyPropertyChanging, INotifyPropertyChanged
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -20,21 +20,9 @@ namespace 期末作业.Models
 
         private System.Nullable<int> _Score;
 
-        #region 可扩展性方法定义
-        partial void OnLoaded();
-        partial void OnValidate(System.Data.Linq.ChangeAction action);
-        partial void OnCreated();
-        partial void OnStudentNoChanging(int value);
-        partial void OnStudentNoChanged();
-        partial void OnCourseIdChanging(int value);
-        partial void OnCourseIdChanged();
-        partial void OnScoreChanging(System.Nullable<int> value);
-        partial void OnScoreChanged();
-        #endregion
 
         public ScoreMsg()
         {
-            OnCreated();
         }
 
         [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_StudentNo", DbType = "Int NOT NULL", IsPrimaryKey = true)]
@@ -48,11 +36,9 @@ namespace 期末作业.Models
             {
                 if ((this._StudentNo != value))
                 {
-                    this.OnStudentNoChanging(value);
                     this.SendPropertyChanging();
                     this._StudentNo = value;
                     this.SendPropertyChanged("StudentNo");
-                    this.OnStudentNoChanged();
                 }
             }
         }
@@ -68,11 +54,9 @@ namespace 期末作业.Models
             {
                 if ((this._CourseId != value))
                 {
-                    this.OnCourseIdChanging(value);
                     this.SendPropertyChanging();
                     this._CourseId = value;
                     this.SendPropertyChanged("CourseId");
-                    this.OnCourseIdChanged();
                 }
             }
         }
@@ -88,11 +72,9 @@ namespace 期末作业.Models
             {
                 if ((this._Score != value))
                 {
-                    this.OnScoreChanging(value);
                     this.SendPropertyChanging();
                     this._Score = value;
                     this.SendPropertyChanged("Score");
-                    this.OnScoreChanged();
                 }
             }
         }

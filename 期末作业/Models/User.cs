@@ -10,7 +10,7 @@ namespace 期末作业.Models
 {
    [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[User]")]
 
-    public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
+    public  class User : INotifyPropertyChanging, INotifyPropertyChanged
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -21,21 +21,9 @@ namespace 期末作业.Models
 
         private string _Password;
 
-        #region 可扩展性方法定义
-        partial void OnLoaded();
-        partial void OnValidate(System.Data.Linq.ChangeAction action);
-        partial void OnCreated();
-        partial void OnUserIdChanging(int value);
-        partial void OnUserIdChanged();
-        partial void OnUserNameChanging(string value);
-        partial void OnUserNameChanged();
-        partial void OnPasswordChanging(string value);
-        partial void OnPasswordChanged();
-        #endregion
 
         public User()
         {
-            OnCreated();
         }
 
         [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_UserId", AutoSync = AutoSync.OnInsert, DbType = "Int NOT NULL IDENTITY", IsPrimaryKey = true, IsDbGenerated = true)]
@@ -49,11 +37,9 @@ namespace 期末作业.Models
             {
                 if ((this._UserId != value))
                 {
-                    this.OnUserIdChanging(value);
                     this.SendPropertyChanging();
                     this._UserId = value;
                     this.SendPropertyChanged("UserId");
-                    this.OnUserIdChanged();
                 }
             }
         }
@@ -69,11 +55,9 @@ namespace 期末作业.Models
             {
                 if ((this._UserName != value))
                 {
-                    this.OnUserNameChanging(value);
                     this.SendPropertyChanging();
                     this._UserName = value;
                     this.SendPropertyChanged("UserName");
-                    this.OnUserNameChanged();
                 }
             }
         }
@@ -89,11 +73,9 @@ namespace 期末作业.Models
             {
                 if ((this._Password != value))
                 {
-                    this.OnPasswordChanging(value);
                     this.SendPropertyChanging();
                     this._Password = value;
                     this.SendPropertyChanged("Password");
-                    this.OnPasswordChanged();
                 }
             }
         }

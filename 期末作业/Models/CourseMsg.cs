@@ -10,7 +10,7 @@ namespace 期末作业.Models
 {
     	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CourseMsg")]
 
-    public partial class CourseMsg : INotifyPropertyChanging, INotifyPropertyChanged
+    public  class CourseMsg : INotifyPropertyChanging, INotifyPropertyChanged
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -29,29 +29,9 @@ namespace 期末作业.Models
 
         private System.Nullable<int> _ExperimentCredit;
 
-        #region 可扩展性方法定义
-        partial void OnLoaded();
-        partial void OnValidate(System.Data.Linq.ChangeAction action);
-        partial void OnCreated();
-        partial void OnCourseIdChanging(int value);
-        partial void OnCourseIdChanged();
-        partial void OnCourseNameChanging(string value);
-        partial void OnCourseNameChanged();
-        partial void OnCourseClassChanging(string value);
-        partial void OnCourseClassChanged();
-        partial void OnRequiredChanging(System.Nullable<bool> value);
-        partial void OnRequiredChanged();
-        partial void OnCreditChanging(System.Nullable<int> value);
-        partial void OnCreditChanged();
-        partial void OnPrelectionCreditChanging(System.Nullable<int> value);
-        partial void OnPrelectionCreditChanged();
-        partial void OnExperimentCreditChanging(System.Nullable<int> value);
-        partial void OnExperimentCreditChanged();
-        #endregion
 
         public CourseMsg()
         {
-            OnCreated();
         }
 
         [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_CourseId", AutoSync = AutoSync.OnInsert, DbType = "Int NOT NULL IDENTITY", IsPrimaryKey = true, IsDbGenerated = true)]
@@ -65,11 +45,9 @@ namespace 期末作业.Models
             {
                 if ((this._CourseId != value))
                 {
-                    this.OnCourseIdChanging(value);
                     this.SendPropertyChanging();
                     this._CourseId = value;
                     this.SendPropertyChanged("CourseId");
-                    this.OnCourseIdChanged();
                 }
             }
         }
@@ -85,11 +63,9 @@ namespace 期末作业.Models
             {
                 if ((this._CourseName != value))
                 {
-                    this.OnCourseNameChanging(value);
                     this.SendPropertyChanging();
                     this._CourseName = value;
                     this.SendPropertyChanged("CourseName");
-                    this.OnCourseNameChanged();
                 }
             }
         }
@@ -105,11 +81,9 @@ namespace 期末作业.Models
             {
                 if ((this._CourseClass != value))
                 {
-                    this.OnCourseClassChanging(value);
                     this.SendPropertyChanging();
                     this._CourseClass = value;
                     this.SendPropertyChanged("CourseClass");
-                    this.OnCourseClassChanged();
                 }
             }
         }
@@ -125,11 +99,9 @@ namespace 期末作业.Models
             {
                 if ((this._Required != value))
                 {
-                    this.OnRequiredChanging(value);
                     this.SendPropertyChanging();
                     this._Required = value;
                     this.SendPropertyChanged("Required");
-                    this.OnRequiredChanged();
                 }
             }
         }
@@ -145,11 +117,9 @@ namespace 期末作业.Models
             {
                 if ((this._Credit != value))
                 {
-                    this.OnCreditChanging(value);
                     this.SendPropertyChanging();
                     this._Credit = value;
                     this.SendPropertyChanged("Credit");
-                    this.OnCreditChanged();
                 }
             }
         }
@@ -165,11 +135,9 @@ namespace 期末作业.Models
             {
                 if ((this._PrelectionCredit != value))
                 {
-                    this.OnPrelectionCreditChanging(value);
                     this.SendPropertyChanging();
                     this._PrelectionCredit = value;
                     this.SendPropertyChanged("PrelectionCredit");
-                    this.OnPrelectionCreditChanged();
                 }
             }
         }
@@ -185,11 +153,9 @@ namespace 期末作业.Models
             {
                 if ((this._ExperimentCredit != value))
                 {
-                    this.OnExperimentCreditChanging(value);
                     this.SendPropertyChanging();
                     this._ExperimentCredit = value;
                     this.SendPropertyChanged("ExperimentCredit");
-                    this.OnExperimentCreditChanged();
                 }
             }
         }
